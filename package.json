@@ -1,7 +1,7 @@
 {
-  "name": "@serverless/tencent-express",
-  "description": "Tencent Express Component",
-  "version": "2.3.3",
+  "name": "serverless-nestjs-for-tencent",
+  "description": "Serverless Component Tencent Cloud",
+  "version": "0.0.8",
   "main": "./serverless.js",
   "publishConfig": {
     "access": "public"
@@ -16,14 +16,18 @@
       "tag": false
     }
   },
-  "author": "Serverless, Inc.",
   "license": "Apache",
   "dependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.1",
+    "@nestjs/platform-express": "^7.0.0",
+    "rxjs": "^6.5.4",
     "@serverless/core": "^1.0.0",
     "@serverless/tencent-apigateway": "^2.1.4",
     "@serverless/tencent-scf": "^3.0.0",
     "ext": "^1.4.0",
     "fs-extra": "^8.1.0",
+    "reflect-metadata": "^0.1.13",
     "tencent-serverless-http": "^1.0.5",
     "terser": "^4.6.3",
     "type": "^2.0.0",
