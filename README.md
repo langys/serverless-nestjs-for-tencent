@@ -38,7 +38,28 @@ $ touch serverless.yml
 初始化一个新的 Nest 项目：
 ```
 $ nest new mynestjs
+$ npm install tencent-serverless-http --save
 ```
+
+创建src/index.js文件：
+```
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { Server } from 'http';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import * as express from 'express';
+import { createServer } from 'tencent-serverless-http';
+
+export const bootstrapServer = async (): Promise<Server> => {
+    const expressApp = express();
+    const adapter = new ExpressAdapter(expressApp);
+    const app = await NestFactory.create(AppModule, adapter);
+    app.enableCors();
+    await app.init();
+    return createServer(expressApp)
+}
+```
+
 
 ### 3. 配置
 
@@ -63,6 +84,7 @@ express:
 通过`sls`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息
 
 ```
+$ npm run build
 $ sls --debug
 
   DEBUG ─ Resolving the template's static variables.
