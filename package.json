@@ -1,7 +1,7 @@
 {
   "name": "serverless-nestjs-for-tencent",
   "description": "Serverless Component Tencent Cloud",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "./serverless.js",
   "publishConfig": {
     "access": "public"

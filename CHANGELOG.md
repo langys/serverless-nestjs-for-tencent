@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/langys/serverless-nestjs-for-tencent/compare/v0.0.8...v0.0.9) (2020-03-15)
+
 ### [0.0.8](https://github.com/langys/serverless-nestjs-for-tencent/compare/v2.3.3...v0.0.8) (2020-03-15)
 
 ### [2.3.3](https://github.com/serverless-components/tencent-express/compare/v2.3.2...v2.3.3) (2020-03-12)
