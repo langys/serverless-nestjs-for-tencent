@@ -38,7 +38,6 @@ $ touch serverless.yml
 初始化一个新的 Nest 项目：
 ```
 $ nest new mynestjs
-$ npm install tencent-serverless-http --save
 ```
 
 创建src/index.ts文件：
