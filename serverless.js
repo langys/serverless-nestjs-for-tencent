@@ -20,7 +20,7 @@ class TencentExpress extends Component {
       this.state.functionName ||
       `ExpressComponent_${random({ length: 6 })}`
 
-    inputs.codeUri = ensureString(inputs.code, { isOptional: true }) || process.cwd()
+    inputs.codeUri = ensureString(inputs.codeUri, { isOptional: true }) || process.cwd()
     inputs.region = ensureString(inputs.region, { default: 'ap-guangzhou' })
     inputs.namespace = ensureString(inputs.namespace, { default: 'default' })
     inputs.include = ensureIterable(inputs.include, { default: [], ensureItem: ensureString })
@@ -29,9 +29,9 @@ class TencentExpress extends Component {
       default: {}
     })
 
-    const appFile = path.resolve(inputs.codeUri, 'app.js')
+    const appFile = path.resolve(inputs.codeUri + '/dist', 'index.js')
     if (!(await utils.fileExists(appFile))) {
-      throw new Error(`app.js not found in ${inputs.codeUri}`)
+      throw new Error(`index.js not found in ${inputs.codeUri}/dist`)
     }
 
     const cachedHandlerPath = await resolveCachedHandlerPath(inputs)

@@ -1,7 +1,13 @@
-const { createServer, proxy } = require('tencent-serverless-http')
+const { proxy } = require('tencent-serverless-http')
 
-module.exports.handler = (event, context) => {
-  const app = require.fromParentEnvironment('./app')
-  const server = createServer(app)
-  return proxy(server, event, context, 'PROMISE').promise
+let cachedServer
+module.exports.handler = async (event, context) => {
+  const { bootstrapServer } = require.fromParentEnvironment('./dist/index')
+  if (!cachedServer) {
+    const server = await bootstrapServer()
+    cachedServer = server
+    return proxy(server, event, context, 'PROMISE').promise
+  } else {
+    return proxy(cachedServer, event, context, 'PROMISE').promise
+  }
 }

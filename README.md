@@ -1,19 +1,16 @@
-[![Serverless Express Tencent Cloud](https://img.serverlesscloud.cn/2020210/1581352135771-express.png)](http://serverless.com)
-
 * [请点击这里查看英文版部署文档](./README_EN.md)
 
 &nbsp;
 
-# 腾讯云Express组件
+## 适配腾讯云的Serverless Nest组件
 
 ## 简介
 
-Express 组件通过使用 serverless-tencent 的基础组件如API网关组件，SCF组件等，快速，方便的在腾讯云创建，配置和管理一个Express框架。
-<img align="right" width="400" src="https://scf-dev-tools-1253665819.cos.ap-guangzhou.myqcloud.com/express_demo_light_sm_resize.gif" />
+Nest 组件通过使用 serverless-tencent 的基础组件如API网关组件，SCF组件等，快速，方便的在腾讯云创建，配置和管理一个Nest框架。
 
 ## 快速开始
 
-通过 Express 组件，对一个 Express应用进行完整的创建，配置，部署和删除等操作。支持命令如下：
+通过 Nest 组件，对一个 Nest应用进行完整的创建，配置，部署和删除等操作。支持命令如下：
 
 1. [安装](#1-安装)
 2. [创建](#2-创建)
@@ -23,10 +20,11 @@ Express 组件通过使用 serverless-tencent 的基础组件如API网关组件�
 
 ### 1. 安装
 
-通过 npm 安装 serverless 
+通过 npm 安装 serverless、nestjs
 
 ```console
 $ npm install -g serverless
+$ npm install -g @nestjs/cli
 ```
 
 ### 2. 创建
@@ -37,23 +35,9 @@ $ npm install -g serverless
 $ touch serverless.yml
 ```
 
-初始化一个新的 npm 包，并安装 Express：
+初始化一个新的 Nest 项目：
 ```
-npm init              # 创建后持续回车
-npm i --save express  # 安装express
-```
-
-创建一个 `app.js`文件，并在其中创建您的 Express App：
-```js
-const express = require('express')
-const app = express()
-
-app.get('/', function(req, res) {
-  res.send('Hello Express')
-})
-
-// don't forget to export!
-module.exports = app
+$ nest new mynestjs
 ```
 
 ### 3. 配置
@@ -64,9 +48,9 @@ module.exports = app
 # serverless.yml
 
 express:
-  component: '@serverless/tencent-express'
+  component: 'serverless-nestjs-for-tencent'
   inputs:
-    region: ap-shanghai
+    region: ap-guangzhou
 
 ```
 * [点击此处查看配置文档](https://github.com/serverless-tencent/tencent-express/blob/master/docs/configure.md)
