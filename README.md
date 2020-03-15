@@ -41,7 +41,7 @@ $ nest new mynestjs
 $ npm install tencent-serverless-http --save
 ```
 
-创建src/index.js文件：
+创建src/index.ts文件：
 ```
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
